@@ -1,0 +1,6 @@
+“.h5
+git[[:space:]]add[[:space:]]chest_xray_model.h5
+git[[:space:]]lfs[[:space:]]track[[:space:]]“.h5 filter=lfs diff=lfs merge=lfs -text
+.h5 filter=lfs diff=lfs merge=lfs -text
+*.h5 filter=lfs diff=lfs merge=lfs -text
+*.pkl2 filter=lfs diff=lfs merge=lfs -text
