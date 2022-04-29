@@ -20,7 +20,7 @@ if  uploaded_img is not None:
 
     img_bytes = np.asarray(bytearray(uploaded_img.read()), dtype = np.uint8) # Convert to an opencv image.
     cv_Img = cv2.imdecode(img_bytes, 1)
-    cv_Img  = cv2.cvtColor(cv_Img, cv2.COLOR_BGR@RGB)
+    cv_Img  = cv2.cvtColor(cv_Img, cv2.COLOR_BGR2RGB)
     img_eqhist=cv2.equalizeHist(cv_Img)
     clahe = cv2.createCLAHE(clipLimit=3).apply(img_eqhist)
     invert = cv2.bitwise_not(clahe)
