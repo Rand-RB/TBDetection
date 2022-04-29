@@ -7,7 +7,7 @@ from tensorflow.keras.applications.mobilenet_v2 import MobileNetV2,preprocess_in
 import pickle
 import tensorflow as tf
 import cv2
-from .cv2 import *
+#from .cv2 import *
 
 st.write("""
 # Chest X_Ray  **TB Prediction** type!
