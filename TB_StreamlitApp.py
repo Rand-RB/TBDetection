@@ -10,7 +10,7 @@ st.write("""
 # Chest X_Ray  **TB Prediction** type!
 """)
 
-model = tf.keras.models.load_model("chest_xray_model.h5")
+model = tf.keras.models.load_model("chest_xray_model.h5.pkl")
 uploaded_img = st.file_uploader("Choose an Chest X-Ray Image the extention should be '.jpg'")
 
 if  uploaded_img is not None:
