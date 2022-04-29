@@ -19,7 +19,7 @@ uploaded_img = st.file_uploader("Choose an Chest X-Ray Image the extention shoul
 if  uploaded_img is not None:
 
     img_bytes = np.asarray(bytearray(uploaded_img.read()), dtype = np.uint8) # Convert to an opencv image.
-    cv_Img = cv2.imdecode(file_bytes, 1)
+    cv_Img = cv2.imdecode(img_bytes, 1)
     cv_Img  = cv2.cvtColor(cv_Img, cv2.COLOR_BGR@RGB)
     img_eqhist=cv2.equalizeHist(cv_Img)
     clahe = cv2.createCLAHE(clipLimit=3).apply(img_eqhist)
