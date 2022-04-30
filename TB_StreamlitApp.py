@@ -48,6 +48,7 @@ if  uploaded_img is not None:
 
     if pred:
         my_pred = model.predict(x)
+        st.write(my_pred)
         result = int(my_pred [0][0])
         if (result == 0):
             st.title("Unfortunately..... The Patient has Tuberculosis😷")
