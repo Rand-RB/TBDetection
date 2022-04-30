@@ -29,14 +29,14 @@ if  uploaded_img is not None:
     resized = cv2.resize(invert,(512,512),3)
     resized_img = cv2.resize(cv_Img,(512,512),3)
     #final_img = invert.reshape([32,512,512,3])
-    st.image(resized_img)
+    st.image(resized_img, channels="RGB")
     
     #img = image.load_img(invert, target_size=(512, 512))
     x = image.img_to_array(resized_img)
     x = np.expand_dims(x, axis=0)
     #img = x.reshape(512,512,3)
     x = preprocess_input(x)
-    st.image(resized_img)
+    #st.image(resized_img)
     resized = mobilenet_v2_preprocess_input(resized_img)
     img = resized[np.newaxis,...]
 #input = tf.Tensor(shape=(32, 512,512,3))
