@@ -37,13 +37,14 @@ if  uploaded_img is not None:
     #x = preprocess_input(x, data_format=None)
     #st.image(x)
     resized = mobilenet_v2_preprocess_input(resized_img)
-    img_reshape = resized[np.newaxis,...]
+    #img = resized[np.newaxis,...]
+    img = resized.reshape(512,512,3)
 #input = tf.Tensor(shape=(32, 512,512,3))
     
     pred = st.button("Let's See The  Tuberculosis Prediction Result ")
 
     if pred:
-        my_pred = model.predict(img_reshape, inputs=tf.Tensor(Shape=(None, 512, 512,3)))
+        my_pred = model.predict(img_reshape)
         result = int(my_pred [0][0])
         if (result == 0):
             st.title("Patient is Affected By Tuberculosis")
