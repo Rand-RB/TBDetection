@@ -26,9 +26,10 @@ if  uploaded_img is not None:
     img_hist =cv2.equalizeHist(gray_img)
     clahe = cv2.createCLAHE(clipLimit=3).apply(img_hist)
     invert = cv2.bitwise_not(clahe)
-    resized_img = cv2.resize(invert,(512,512),3)
+    resized = cv2.resize(invert,(512,512),3)
+    resized_img = cv2.resize(cv_Img,(512,512),3)
     #final_img = invert.reshape([32,512,512,3])
-    
+    st.image(resized_img)
     
     #img = image.load_img(invert, target_size=(512, 512))
     x = image.img_to_array(resized_img)
