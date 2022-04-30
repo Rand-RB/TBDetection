@@ -34,6 +34,7 @@ if  uploaded_img is not None:
     img = x.reshape(512,512,3)
     x = image.img_to_array(resized_img)
     x = np.expand_dims(x, axis=0)
+    img = x.reshape(512,512,3)
     #x = preprocess_input(x)
     #st.image(x)
 #input = tf.Tensor(shape=(32, 512,512,3))
