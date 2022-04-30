@@ -28,12 +28,13 @@ if  uploaded_img is not None:
     invert = cv2.bitwise_not(clahe)
     #resized_img = cv2.resize(invert,[512,512],3)
     #final_img = invert.reshape([32,512,512,3])
-    st.image(resized_img)
     
-img = image.load_img(invert, target_size=(512, 512))
-x = image.img_to_array(img)
-x = np.expand_dims(x, axis=0)
-x = preprocess_input(x)
+    
+    img = image.load_img(invert, target_size=(512, 512))
+    x = image.img_to_array(img)
+    x = np.expand_dims(x, axis=0)
+    x = preprocess_input(x)
+    st.image(x)
 
 pred = st.button("Let's See The  Tuberculosis Prediction Result ")
 
