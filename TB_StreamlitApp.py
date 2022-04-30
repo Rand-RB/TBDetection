@@ -37,8 +37,7 @@ if  uploaded_img is not None:
     #x = preprocess_input(x, data_format=None)
     #st.image(x)
     resized = mobilenet_v2_preprocess_input(resized_img)
-    #img = resized[np.newaxis,...]
-    img = resized.reshape(512,512,3)
+    img = resized[np.newaxis,...]
 #input = tf.Tensor(shape=(32, 512,512,3))
     
     pred = st.button("Let's See The  Tuberculosis Prediction Result ")
