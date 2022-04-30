@@ -39,7 +39,7 @@ input = tf.Tensor(shape=(32, 512,512,3))
 pred = st.button("Let's See The  Tuberculosis Prediction Result ")
 
 if pred:
-    my_pred = model.predict(resized_img)
+    my_pred = model.predict(x)
     result = int(my_pred [0][0])
     if (result == 0):
         st.title("Patient is Affected By Tuberculosis")
