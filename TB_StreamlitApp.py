@@ -26,7 +26,7 @@ if  uploaded_img is not None:
     img_hist =cv2.equalizeHist(gray_img)
     clahe = cv2.createCLAHE(clipLimit=3).apply(img_hist)
     invert = cv2.bitwise_not(clahe)
-    resized_img = cv2.resize(cv_Img,(512,512),3)
+    resized_img = cv2.resize(invert,(512,512),3)
     #final_img = invert.reshape([32,512,512,3])
     
     
@@ -35,7 +35,7 @@ if  uploaded_img is not None:
     x = np.expand_dims(x, axis=0)
     #img = x.reshape(512,512,3)
     x = preprocess_input(x)
-    st.image(x)
+    st.image(resized_img)
     resized = mobilenet_v2_preprocess_input(resized_img)
     img = resized[np.newaxis,...]
 #input = tf.Tensor(shape=(32, 512,512,3))
