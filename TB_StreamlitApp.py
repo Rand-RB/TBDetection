@@ -11,7 +11,7 @@ import cv2
 #from .cv2 import *
 
 st.title("""
-# **Tuberculosis Detection**🕵️‍♀️
+ **Tuberculosis Detection**🕵️‍♀️
 """)
 
 model = tf.keras.models.load_model("chest_xray_model.h5.pkl")
@@ -29,7 +29,7 @@ if  uploaded_img is not None:
     resized = cv2.resize(invert,(512,512),3)
     resized_img = cv2.resize(cv_Img,(512,512),3)
     #final_img = invert.reshape([32,512,512,3])
-    st.image(resized_img, channels="RGB")
+    st.image(resized, channels="RGB")
     
     #img = image.load_img(invert, target_size=(512, 512))
     x = image.img_to_array(resized_img)
