@@ -31,7 +31,6 @@ if  uploaded_img is not None:
     
     
     #img = image.load_img(invert, target_size=(512, 512))
-    img = x.reshape(512,512,3)
     x = image.img_to_array(resized_img)
     x = np.expand_dims(x, axis=0)
     img = x.reshape(512,512,3)
@@ -42,7 +41,7 @@ if  uploaded_img is not None:
     pred = st.button("Let's See The  Tuberculosis Prediction Result ")
 
     if pred:
-        my_pred = model.predict(x)
+        my_pred = model.predict(img)
         result = int(my_pred [0][0])
         if (result == 0):
             st.title("Patient is Affected By Tuberculosis")
