@@ -31,12 +31,13 @@ if  uploaded_img is not None:
     
     
     #img = image.load_img(invert, target_size=(512, 512))
+    img = x.reshape(512,512,3)
     x = image.img_to_array(resized_img)
     x = np.expand_dims(x, axis=0)
     #x = preprocess_input(x)
     #st.image(x)
 #input = tf.Tensor(shape=(32, 512,512,3))
-    img = x.reshape(None,512,512,3)
+    
     pred = st.button("Let's See The  Tuberculosis Prediction Result ")
 
     if pred:
