@@ -43,7 +43,7 @@ if  uploaded_img is not None:
     pred = st.button("Let's See The  Tuberculosis Prediction Result ")
 
     if pred:
-        my_pred = model.predict(img_reshape).argmax()
+        my_pred = model.predict(img_reshape)
         result = int(my_pred [0][0])
         if (result == 0):
             st.title("Patient is Affected By Tuberculosis")
