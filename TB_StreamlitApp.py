@@ -29,9 +29,9 @@ if  uploaded_img is not None:
     st.image(resized_img)
 
 pred = st.button("Let's See The  Tuberculosis Prediction Result ")
-
+final_img = resized_img.reshape(32,512,512,3)
 if pred:
-    my_pred = model.predict(resized_img, shape = [512,512,3])
+    my_pred = model.predict(final_img)
     result = int(my_pred [0][0])
     if (result == 0):
         st.title("Patient is Affected By Tuberculosis")
