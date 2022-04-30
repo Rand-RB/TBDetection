@@ -25,7 +25,7 @@ if  uploaded_img is not None:
     img_hist =cv2.equalizeHist(gray_img)
     clahe = cv2.createCLAHE(clipLimit=3).apply(img_hist)
     invert = cv2.bitwise_not(clahe)
-    resize = cv2.resize(opencv_image,(224,224))
+    resize = cv2.resize(invert,(224,224))
     st.image(opencv_image)
 
 pred = st.button("Let's See The  Tuberculosis Prediction Result ")
