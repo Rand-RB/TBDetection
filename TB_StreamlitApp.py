@@ -29,7 +29,7 @@ if  uploaded_img is not None:
     img_hist =cv2.equalizeHist(gray_img)
     clahe = cv2.createCLAHE(clipLimit=3).apply(img_hist)
     invert = cv2.bitwise_not(clahe)
-    resized = cv2.resize(invert,(300,300))
+    resized = cv2.resize(invert,(350,350))
     resized_img = cv2.resize(cv_Img,(512,512),3)
     #final_img = invert.reshape([32,512,512,3])
     st.image(resized, channels="RGB")
