@@ -33,7 +33,7 @@ if  uploaded_img is not None:
     #img = image.load_img(invert, target_size=(512, 512))
     x = image.img_to_array(resized_img)
     x = np.expand_dims(x, axis=0)
-    x = preprocess_input(x)
+    #x = preprocess_input(x)
     st.image(x)
 
 pred = st.button("Let's See The  Tuberculosis Prediction Result ")
