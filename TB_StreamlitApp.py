@@ -10,7 +10,7 @@ import tensorflow as tf
 import cv2
 #from .cv2 import *
 
-st.write("""
+st.title("""
 # **Tuberculosis Detection**🕵️‍♀️
 """)
 
@@ -21,11 +21,11 @@ if  uploaded_img is not None:
 
     img_bytes = np.asarray(bytearray(uploaded_img.read()), dtype = np.uint8) # Convert to an opencv image.
     cv_Img = cv2.imdecode(img_bytes, 1)
-    #img = cv2.imread(cv_Img, 0)
-    #gray_img = cv2.cvtColor(cv_Img,cv2.COLOR_BGR2GRAY)
-    #img_hist =cv2.equalizeHist(gray_img)
-    #clahe = cv2.createCLAHE(clipLimit=3).apply(img_hist)
-    #invert = cv2.bitwise_not(clahe)
+    img = cv2.imread(cv_Img, 0)
+    gray_img = cv2.cvtColor(cv_Img,cv2.COLOR_BGR2GRAY)
+    img_hist =cv2.equalizeHist(gray_img)
+    clahe = cv2.createCLAHE(clipLimit=3).apply(img_hist)
+    invert = cv2.bitwise_not(clahe)
     resized_img = cv2.resize(cv_Img,(512,512),3)
     #final_img = invert.reshape([32,512,512,3])
     
@@ -35,7 +35,7 @@ if  uploaded_img is not None:
     x = np.expand_dims(x, axis=0)
     #img = x.reshape(512,512,3)
     x = preprocess_input(x)
-    #st.image(x)
+    st.image(x)
     resized = mobilenet_v2_preprocess_input(resized_img)
     img = resized[np.newaxis,...]
 #input = tf.Tensor(shape=(32, 512,512,3))
