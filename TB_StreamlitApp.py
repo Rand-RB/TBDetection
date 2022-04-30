@@ -11,7 +11,7 @@ import cv2
 #from .cv2 import *
 
 st.write("""
-# Chest X_Ray  **TB Prediction** type!
+# **Tuberculosis Detection**🕵️‍♀️
 """)
 
 model = tf.keras.models.load_model("chest_xray_model.h5.pkl")
@@ -40,15 +40,15 @@ if  uploaded_img is not None:
     img = resized[np.newaxis,...]
 #input = tf.Tensor(shape=(32, 512,512,3))
     
-    pred = st.button("Let's See The  Tuberculosis Prediction Result ")
+    pred = st.button("Let's See The TB Infection Result🤖")
 
     if pred:
         my_pred = model.predict(img)
         result = int(my_pred [0][0])
         if (result == 0):
-            st.title("Patient is Affected By Tuberculosis")
+            st.title("Unfortunately..... The Patient has Tuberculosis😷")
         else:
-            st.title("The patient's Chest is Normal")
+            st.title("The patient's Chest is Normal🥳")
 
 
 
