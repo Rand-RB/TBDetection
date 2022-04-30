@@ -35,7 +35,7 @@ if  uploaded_img is not None:
     x = np.expand_dims(x, axis=0)
     #x = preprocess_input(x)
     #st.image(x)
-input = tf.Tensor(shape=(32, 512,512,3))
+#input = tf.Tensor(shape=(32, 512,512,3))
 pred = st.button("Let's See The  Tuberculosis Prediction Result ")
 
 if pred:
