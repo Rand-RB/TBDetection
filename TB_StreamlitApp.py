@@ -11,7 +11,7 @@ import cv2
 #from .cv2 import *
 
 st.title("""
- Tuberculosis Detection App🕵️‍♀️
+ Tuberculosis Detection🕵️‍♀️
  
 """)
 st.write("""
