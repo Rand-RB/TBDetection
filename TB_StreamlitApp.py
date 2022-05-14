@@ -15,7 +15,7 @@ st.title("""
  
 """)
 st.write("""
-## This app will help doctors to determind if the paisent has Tuberculosis or not🩺🥼
+#### This app will help doctors to determind if the paisent has Tuberculosis or not🩺🥼
 """)
 
 model = tf.keras.models.load_model("chest_xray_model.h5.pkl")
