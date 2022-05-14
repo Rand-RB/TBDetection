@@ -11,11 +11,10 @@ import cv2
 #from .cv2 import *
 
 st.title("""
- Tuberculosis Detection🕵️‍♀️
- 
- 
+ Tuberculosis Detection App🕵️‍♀️
  
 """)
+st.h3("This App Will help doctors to determind if the paisent has Tuberculosis or not🩺🥼")
 
 model = tf.keras.models.load_model("chest_xray_model.h5.pkl")
 uploaded_img = st.file_uploader("Choose an Chest X-Ray Image the extention should be '.jpg'")
@@ -51,9 +50,9 @@ if  uploaded_img is not None:
         #st.write(my_pred)
         result = int(my_pred [0][0])
         if (result == 0):
-            st.title("Unfortunately..... The Patient has Tuberculosis😷")
+            st.title("Unfortunately..... The Patient Seems it has Tuberculosis😷 You Have to Complete the Rest of the Medical Examinations ")
         else:
-            st.title("The patient's Chest is Normal🥳")
+            st.title("The patient's Chest Seems Normal🥳")
 
 
 
