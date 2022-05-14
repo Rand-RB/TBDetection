@@ -14,7 +14,7 @@ st.title("""
  Tuberculosis Detection App🕵️‍♀️
  
 """)
-st.text("<b>This app will help doctors to determind if the paisent has Tuberculosis or not🩺🥼<b>")
+st.text(<b>"This app will help doctors to determind if the paisent has Tuberculosis or not🩺🥼"<b>)
 
 model = tf.keras.models.load_model("chest_xray_model.h5.pkl")
 uploaded_img = st.file_uploader("Choose an Chest X-Ray Image the extention should be '.jpg'")
