@@ -54,7 +54,7 @@ if  uploaded_img is not None:
         if (result == 0):
             st.title("Unfortunately..... The Patient Seems it has Tuberculosis😷 You Have to Complete the Rest of the Medical Examinations ")
         else:
-            st.title("The patient's Chest Seems Normal🥳")
+            st.title("The patient's Chest Seems Doesn't Have Tuberculosis🥳")
 
 
 
